@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Office Hours</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; color: #000; display: flex; flex-direction: column; min-height: 100vh; }
+header { background-color: #7A0019; padding: 25px 40px; }
+header h1 { margin: 0; color: #FFCC33; }
+header p { margin: 5px 0 0 0; color: #FFCC33; }
+.layout { display: flex; flex: 1; }
+nav { width: 200px; flex-shrink: 0; background-color: #7A0019; padding: 20px; }
+nav ul { list-style: none; padding: 0; margin: 0; }
+nav li { margin-bottom: 14px; }
+nav a { text-decoration: none; color: #FFCC33; font-weight: bold; display: block; font-size: 0.9rem; }
+nav a:hover { text-decoration: underline; }
+main { flex: 1; padding: 40px; width: 100%; min-width: 0; }
+h2 { color: #FFCC33; }
+h3 { color: #7A0019; margin: 0 0 8px 0; font-size: 1rem; }
+.card { background: white; padding: 25px; margin-bottom: 25px; border-left: 8px solid #7A0019; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s ease; width: 100%; }
+.card:hover { transform: translateY(-4px); }
+.card p { margin-top: 8px; color: #000; line-height: 1.7; }
+.card p:first-child { margin-top: 0; }
+.card ul { padding-left: 20px; line-height: 1.9; margin-top: 8px; }
+.card a { color: #7A0019; }
+.card a:hover { text-decoration: underline; }
+
+.modality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 12px; }
+.modality-box { border-radius: 6px; padding: 16px 18px; }
+.modality-box p { font-size: 0.88rem; color: #333; margin: 0; line-height: 1.6; }
+.mod-inperson { background: #fdf8e1; border: 1px solid #FFCC33; }
+.mod-zoom     { background: #e8f0fe; border: 1px solid #4a80d4; }
+.mod-hybrid   { background: #f5f5f5; border: 1px solid #aaa; }
+.mod-inperson h3 { color: #7A0019; }
+.mod-zoom h3     { color: #1a56c4; }
+.mod-hybrid h3   { color: #444; }
+
+.do-dont { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 12px; }
+.do   { background: #e8f5e9; border-left: 4px solid #388e3c; border-radius: 4px; padding: 14px; }
+.dont { background: #fce4ec; border-left: 4px solid #c62828; border-radius: 4px; padding: 14px; }
+.do strong   { color: #2e7d32; display: block; margin-bottom: 8px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.dont strong { color: #b71c1c; display: block; margin-bottom: 8px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.do ul, .dont ul { margin: 0; padding-left: 16px; font-size: 0.87rem; line-height: 1.8; color: #333; }
+
+.callout { border-radius: 5px; padding: 13px 16px; margin-top: 14px; font-size: 0.9rem; line-height: 1.65; }
+.callout-yellow { background: #fff8e1; border-left: 5px solid #FFCC33; }
+.callout-yellow strong { color: #7A0019; }
+.callout-red { background: #fdecea; border-left: 5px solid #c62828; }
+.callout-red strong { color: #c62828; }
+
+footer { background-color: #7A0019; color: #FFCC33; text-align: center; padding: 15px; margin-top: 50px; }
+@media (max-width: 640px) { .layout { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Office Hours</h1>
+</header>
+
+<div class="layout">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="timesheet.html">Timesheet &amp; Hours</a></li>
+      <li><a href="role.html">Role &amp; Responsibilities</a></li>
+      <li><a href="office-hours.html">Office Hours</a></li>
+      <li><a href="student-vs-ta.html">Student vs TA</a></li>
+      <li><a href="general-advice.html">General Advice</a></li>
+      <li><a href="teaching-methods.html">Teaching Methods</a></li>
+      <li><a href="resources.html">UMN Resources</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="card">
+      <h2>The Basics</h2>
+      <p>Most TAs are expected to hold a minimum of 2 hours of office hours per week, though this can vary by course. Confirm the expected amount with your course instructor at the start of the semester.</p>
+      <p>Reserve your slot by adding your information to the <a href="https://docs.google.com/spreadsheets/d/1y0e-v-uIH7T1C4WsDSKpwarUn9sEV6F5LRYeaqVD8Cw/edit?gid=1731741234#gid=1731741234" target="_blank">TA Office Hours Spreadsheet</a>. Coordinate with other TAs early to avoid overlap and make sure students have access to help throughout the week.</p>
+    </div>
+
+    <div class="card">
+      <h2>Modality</h2>
+      <p>Office hours can be held in person, over Zoom, or in a hybrid format depending on what your course instructor allows. Check with your instructor before the semester begins to confirm which format is expected.</p>
+      <div class="modality-grid">
+        <div class="modality-box mod-inperson">
+          <h3>In-Person</h3>
+          <p>Reserve a space using the <a href="https://docs.google.com/spreadsheets/d/1y0e-v-uIH7T1C4WsDSKpwarUn9sEV6F5LRYeaqVD8Cw/edit?gid=1731741234#gid=1731741234" target="_blank">Office Hours Spreadsheet</a>. Available spaces include Keller Hall atrium tables, Keller 1-201, 1-211, 1-213, 2-209, and Lind L103. Works well for hands-on debugging and working directly alongside students.</p>
+        </div>
+        <div class="modality-box mod-zoom">
+          <h3>Virtual (Zoom)</h3>
+          <p>Use your UMN Zoom account and share the link through Canvas or your course communication platform. Good for screen sharing and helping students who cannot make it to campus. If multiple students need help at the same time, breakout rooms can help you manage the queue.</p>
+        </div>
+        <div class="modality-box mod-hybrid">
+          <h3>Hybrid</h3>
+          <p>Some instructors allow TAs to run hybrid office hours, hosting in a reserved room while also accepting Zoom attendees. This is more demanding since you are managing two channels at once, but it gives students more flexibility. Only do this if your instructor explicitly permits it and you are comfortable with the format.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Time Expectations</h2>
+      <p>Office hours should run for the full duration you have scheduled. Best practice is to be available and attentive for the entire block. If no students show up, that time is still reportable. Use it to prep, grade, or respond to messages.</p>
+      <div class="callout callout-red">
+        <strong>Do not end early.</strong> Students plan their schedules around your posted hours. Packing up before your slot ends, even if it has been quiet, is not appropriate. If something comes up and you genuinely need to leave early, notify your course instructor and post in the class communication channel as soon as possible.
+      </div>
+      <div class="callout callout-yellow">
+        <strong>Staying late:</strong> If students still have questions after your scheduled end time, it is fine to stay a bit longer if you are willing. That said, consistently running significantly over should not become the norm. If demand routinely exceeds your hours, bring it up with your instructor rather than silently absorbing the extra time every week.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Best Practices</h2>
+      <div class="do-dont">
+        <div class="do">
+          <strong>Do</strong>
+          <ul>
+            <li>Show up on time and stay for the full block</li>
+            <li>Be approachable, students are more likely to ask for help if you seem open to it</li>
+            <li>Guide students toward answers rather than giving them directly</li>
+            <li>Log all office hours time, including time you stay late</li>
+            <li>Coordinate with other TAs to ensure solid weekly coverage</li>
+            <li>Post your hours and location clearly so students can find you</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <strong>Don't</strong>
+          <ul>
+            <li>End early without giving notice</li>
+            <li>Spend the session on your phone or personal work while students are waiting</li>
+            <li>Just hand students the answer to save time</li>
+            <li>Make it a regular habit to stay 30+ minutes past your scheduled end</li>
+            <li>Go offline during your hours without posting in the class channel</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Scheduling and Communication</h2>
+      <p>Once your office hours are set, make sure students know where and when to find you. Post your hours and location, or Zoom link, on the course's primary communication platform. If you need to cancel or reschedule, give as much advance notice as possible and post in the class channel.</p>
+    </div>
+
+  </main>
+</div>
+
+<footer>Last Updated: 2026</footer>
+</body>
+</html>

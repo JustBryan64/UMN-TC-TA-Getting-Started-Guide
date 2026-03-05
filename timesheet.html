@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Timesheet & Work Hours</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; color: #000; display: flex; flex-direction: column; min-height: 100vh; }
+header { background-color: #7A0019; padding: 25px 40px; }
+header h1 { margin: 0; color: #FFCC33; }
+header p { margin: 5px 0 0 0; color: #FFCC33; }
+.layout { display: flex; flex: 1; }
+nav { width: 200px; flex-shrink: 0; background-color: #7A0019; padding: 20px; }
+nav ul { list-style: none; padding: 0; margin: 0; }
+nav li { margin-bottom: 14px; }
+nav a { text-decoration: none; color: #FFCC33; font-weight: bold; display: block; font-size: 0.9rem; }
+nav a:hover { text-decoration: underline; }
+main { flex: 1; padding: 40px; width: 100%; min-width: 0; }
+h2 { color: #FFCC33; }
+.card { background: white; padding: 25px; margin-bottom: 25px; border-left: 8px solid #7A0019; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s ease; width: 100%; }
+.card:hover { transform: translateY(-4px); }
+.card p { margin-top: 8px; color: #000; line-height: 1.7; }
+.card p:first-child { margin-top: 0; }
+.card ul { padding-left: 20px; line-height: 1.9; margin-top: 8px; }
+.card a { color: #7A0019; }
+.card a:hover { text-decoration: underline; }
+
+.welcome { background: #7A0019; border-left: none; }
+.welcome h2 { color: #FFCC33; margin: 0 0 8px 0; }
+.welcome p { color: #fff; margin-top: 0; }
+
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 12px; }
+.team-member { background: #fdf8e1; border: 1px solid #FFCC33; border-radius: 6px; padding: 15px 16px; }
+.team-member .name { font-weight: bold; color: #7A0019; font-size: 1rem; margin-bottom: 2px; }
+.team-member .role { font-size: 0.8rem; color: #555; font-style: italic; margin-bottom: 8px; }
+.team-member p { font-size: 0.86rem; color: #333; margin: 0; line-height: 1.55; }
+.team-contact { background: #7A0019; border-color: #7A0019; display: flex; align-items: center; justify-content: center; text-align: center; }
+.team-contact .name { color: #FFCC33; font-size: 0.95rem; }
+.team-contact p { color: #fff; font-size: 0.8rem; opacity: 0.85; }
+
+.contact-box { background: #7A0019; border-radius: 6px; padding: 16px 20px; margin-top: 14px; }
+.contact-box strong { display: block; font-size: 1rem; margin-bottom: 6px; color: #FFCC33; }
+.contact-box p { font-size: 0.88rem; color: #fff; margin: 0; line-height: 1.65; }
+.contact-box a { color: #FFCC33; font-weight: bold; }
+
+.callout { border-radius: 5px; padding: 13px 16px; margin-top: 14px; font-size: 0.9rem; line-height: 1.65; }
+.callout-yellow { background: #fff8e1; border-left: 5px solid #FFCC33; }
+.callout-yellow strong { color: #7A0019; }
+.callout-red { background: #fdecea; border-left: 5px solid #c62828; }
+.callout-red strong { color: #c62828; }
+
+.step-list { list-style: none; padding: 0; margin: 12px 0 0 0; counter-reset: steps; }
+.step-list li { counter-increment: steps; display: flex; gap: 14px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid #eee; }
+.step-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.step-list li::before { content: counter(steps); background: #7A0019; color: #FFCC33; font-weight: bold; font-size: 0.82rem; min-width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.step-list li div { font-size: 0.92rem; line-height: 1.6; }
+.step-list li strong { display: block; color: #7A0019; margin-bottom: 2px; }
+
+footer { background-color: #7A0019; color: #FFCC33; text-align: center; padding: 15px; margin-top: 50px; }
+
+@media (max-width: 640px) { .layout { flex-direction: column; } nav { width: 100%; } main { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Timesheet & Work Hours</h1>
+</header>
+
+<div class="layout">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="timesheet.html">Timesheet &amp; Hours</a></li>
+      <li><a href="role.html">Role &amp; Responsibilities</a></li>
+      <li><a href="office-hours.html">Office Hours</a></li>
+      <li><a href="student-vs-ta.html">Student vs TA</a></li>
+      <li><a href="general-advice.html">General Advice</a></li>
+      <li><a href="teaching-methods.html">Teaching Methods</a></li>
+      <li><a href="resources.html">UMN Resources</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="card welcome">
+      <h2>Welcome, Undergraduate TAs!</h2>
+      <p>Below is the general information related to your timehseet, and information for your payment.</p>
+    </div>
+
+    <div class="card">
+      <h2>Meet the TA Coordination Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="name">Kelly Thomas <span style="font-weight:normal;font-size:0.85rem;">(she/they)</span></div>
+          <div class="role">UG TA Coordinator</div>
+          <p>With the department since 2015 and managing UG TA coordination since 2019. Kelly handles hiring, course placements, and all the big picture stuff. She is the main point of contact for general UG TA questions.</p>
+        </div>
+        <div class="team-member">
+          <div class="name">Jacquelyn Burt <span style="font-weight:normal;font-size:0.85rem;">(she/her)</span></div>
+          <div class="role">Instructor, UG TA Training & Professional Development</div>
+          <p>With the department since 2019. Co-instructor of CSCI 2915: Teaching Methods in Computer Science. Leads the Interrupting Implicit Bias mandatory training and additional optional workshops throughout the academic year.</p>
+        </div>
+        <div class="team-member">
+          <div class="name">Jen Nieto <span style="font-weight:normal;font-size:0.85rem;">(she/her)</span></div>
+          <div class="role">Student Services Specialist</div>
+          <p>With the department for 3 years, assisting with UG TA coordination since Fall 2022. Jen handles application submissions and all mass UG TA communications.</p>
+        </div>
+        <div class="team-member team-contact">
+          <div>
+            <div class="name">cscita@umn.edu</div>
+            <p>General UG TA questions</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-box">
+        <strong>cscita@umn.edu — Your Main Contact</strong>
+        <p><a href="mailto:cscita@umn.edu">cscita@umn.edu</a> is the contact for all CS&E undergraduate TA coordination. All TA-related information is distributed from this account — make sure these emails are not going to your spam folder. Direct all general UG TA questions here for Kelly or Jen to answer. Response time is usually pretty quick during department office hours (8:00 AM – 4:30 PM, Mon–Fri).</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Before Your First Paycheck - Set Up Direct Deposit</h2>
+      <div class="callout callout-red">
+        <strong>First-Time TAs:</strong> You need to set up direct deposit through MyU before your first pay period, otherwise your paycheck may be delayed or issued as a paper check. Take care of this as soon as you are onboarded.
+      </div>
+      <p>To set up direct deposit:</p>
+      <ol class="step-list">
+        <li><div><strong>Go to <a href="https://myu.umn.edu" target="_blank">myu.umn.edu</a></strong> and log in with your UMN Internet ID and password.</div></li>
+        <li><div><strong>Navigate to "My Pay"</strong> from the main dashboard or top menu.</div></li>
+        <li><div><strong>Select "Direct Deposit"</strong> and follow the prompts to enter your bank account and routing number.</div></li>
+        <li><div><strong>Save and confirm.</strong> Allow a pay cycle for the change to take effect. Contact <a href="mailto:cspay@umn.edu">cspay@umn.edu</a> if you run into any issues.</div></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Guidelines for Reporting Hours</h2>
+      <p>Undergraduate TAs must report their hours <strong>consistently and accurately</strong> through MyU. Late reporting of hours can cause a delay in payment, and we want you to be paid on time. Log your hours as you go, don't wait until the end of the pay period.</p>
+      <ol class="step-list">
+        <li><div><strong>Go to <a href="https://myu.umn.edu" target="_blank">myu.umn.edu</a></strong> and sign in with your UMN credentials.</div></li>
+        <li><div><strong>Select "My Time"</strong> from the navigation menu or your employee dashboard.</div></li>
+        <li><div><strong>Enter your hours</strong> for each day worked. Log the actual start and end time or total hours per task, as directed by your supervisor.</div></li>
+        <li><div><strong>Click "Submit Timesheet"</strong> before the pay period deadline. Deadlines vary — confirm the date with your supervisor or reach out to <a href="mailto:cscita@umn.edu">cscita@umn.edu</a> if you are unsure.</div></li>
+      </ol>
+      <div class="callout callout-yellow">
+        <strong>Tip:</strong> Track your hours in real time using a notes app, calendar, or spreadsheet. Trying to remember a week's worth of work at the end of the pay period is easy to mess up and easy to undercount.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Examples of Work That Should Be Reported</h2>
+      <p>Every course comes with different responsibilities, so this is not an exhaustive list. In general, if you are doing something because of your CSCI UG TA position, you should be paid for that time Just make sure your supervisor is aware and has approved it.</p>
+      <ul>
+        <li>Labs, including arriving early to prepare and staying after to help students</li>
+        <li>Discussion sections and review sessions</li>
+        <li>Creating slides or materials for your lab or discussion</li>
+        <li>Office hours, including staying late if there is a student need</li>
+        <li>Grading, including time spent creating or reviewing rubrics</li>
+        <li>Working through homework or projects on your own to prepare to help students</li>
+        <li>Creating study guides, practice problems, or other student resources</li>
+        <li>Responding to student questions — email, Discord, Piazza, Slack, Canvas, etc.</li>
+        <li>Proctoring exams when assigned or volunteered</li>
+        <li>Weekly course staff meetings</li>
+        <li>Maintaining or updating the course website</li>
+        <li>Completing required trainings, such as the Implicit Bias training</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Additional Guidance</h2>
+      <p>Please work closely with your supervisor to make sure that the amount of work you are doing meets their expectations. If you would like to do additional work that was not assigned to you, such as more office hours or extra grading, communicate with your supervisor first to make sure that is okay.</p>
+      <p>We hired you as a UG TA, not as a volunteer. We want to make sure you are being paid for the work you do. If you have payroll questions, contact <a href="mailto:cspay@umn.edu">cspay@umn.edu</a>.</p>
+    </div>
+
+  </main>
+</div>
+
+<footer>Last Updated: 2026</footer>
+</body>
+</html>
